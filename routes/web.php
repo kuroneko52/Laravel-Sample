@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\BookController;
+use App\Http\Controllers\AuthorController;
 
 Route::get('/', function () {
     #return view('welcome');
@@ -21,3 +23,5 @@ Route::post('/upload', [FileController::class, 'store']);
 Route::get('/ajax', [AjaxController::class, 'index']);
 Route::get('/ajax/data', [AjaxController::class, 'getData']);
 
+Route::resource('books', BookController::class);
+Route::resource('authors', AuthorController::class);
