@@ -24,8 +24,7 @@
     
             <button type="submit" class="btn">Update</button>
         </form>
+        <a href="{{ route('books.index') }}">Back to Books List</a>
     </div>
-
-{{--    <a href="{{ route('books.index') }}">Back to Books List</a> --}}
 
 @endsection

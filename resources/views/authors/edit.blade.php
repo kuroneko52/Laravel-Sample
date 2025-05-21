@@ -1,6 +1,7 @@
 @extends('layouts.book')
 
 @section('content')
+
     <div class="form-container">
         <h1>Edit Author</h1>
         <form action="{{ route('authors.update', $author) }}" method="POST">
@@ -12,8 +13,7 @@
             </div>
             <button type="submit" class="btn">Update</button>
         </form>
-    </div>
-
-{{--    <a href="{{ route('authors.index') }}">Back to Authors List</a> --}}
-
+        <a href="{{ route('authors.index') }}">Back to Authors List</a>
+    </div>    
+    
 @endsection

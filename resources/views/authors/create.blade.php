@@ -11,6 +11,7 @@
             </div>
             <button type="submit" class="btn">Add</button>
         </form>
+        <a href="{{ route('authors.index') }}">Back to Authors List</a>
     </div>
 @endsection
 

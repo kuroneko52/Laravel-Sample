@@ -5,19 +5,22 @@
         <div class="column">
             <h1>Books List</h1>
             <a href="{{ route('books.create') }}">本を追加</a>
-            <ul>
-            <br><br>
-                @foreach ($books as $book)
-                    <li>{{ $book->title }} - {{ $book->author->name }}
-                        <a href="{{ route('books.edit', $book) }}" >Edit</a>
-                        <form action="{{ route('books.destroy', $book) }}" method="POST" style="display:inline;">
-                            @csrf
-                            @method('DELETE')
-                            <button type="submit">Delete</button>
-                        </form>
-                    </li>
-                @endforeach
-            </ul>
+            <div class="button-container-delete">
+                <ul>
+                    <br><br>
+                    @foreach ($books as $book)
+                        <li>
+                            {{ $book->title }} - {{ $book->author->name }}
+                            <a href="{{ route('books.edit', $book) }}" >Edit</a>
+                            <form action="{{ route('books.destroy', $book) }}" method="POST" style="display:inline;">
+                                @csrf
+                                @method('DELETE')
+                                <button type="submit">Delete</button>
+                            </form>
+                        </li>
+                    @endforeach
+                </ul>
+            </div>
         </div>
 
         <div class="column">
