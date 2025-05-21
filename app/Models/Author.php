@@ -14,6 +14,7 @@ class Author extends Model
 
     public function books()
     {
+        //1:Nの関係を定義
         return $this->hasMany(Book::class);
     }
 }
