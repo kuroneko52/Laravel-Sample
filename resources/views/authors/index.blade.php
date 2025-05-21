@@ -1,20 +1,34 @@
-@extends('layouts.app')
+@extends('layouts.book')
 
 @section('content')
-    <h1>作者の一覧</h1>
-    <a href="{{ route('authors.create') }}">作者を追加</a>
-    <br>
-    <a href="{{ route('books.create') }}">本を追加</a>
-    <br>
-    <a href="{{ route('books.index') }}">本の一覧</a>
-    <ul>
-        @foreach ($authors as $author)
-            <li>{{ $author->name }}</li>
+    <div class="container">
+        <div class="column">
+            <h1>Authors List</h1>
+            <a href="{{ route('authors.create') }}">作者を追加</a>
+            <br>
+            <a href="{{ route('books.create') }}">本を追加</a>
+            <br>
+            <a href="{{ route('books.index') }}">本の一覧</a>
+            <br><br>
             <ul>
-                @foreach ($author->books as $book)
-                    <li>{{ $book->title }}</li>
+                @foreach ($authors as $author)
+                    <li>
+                        {{ $author->name }}
+                        <a href="{{ route('authors.edit', $author) }}">Edit</a>
+                        <form action="{{ route('authors.destroy', $author) }}" method="POST" style="display:inline;">
+                            @csrf
+                            @method('DELETE')
+                            <button type="submit">Delete</button>
+                        </form>
+                    </li>
+
+                    <ul>
+                        @foreach ($author->books as $book)
+                            <li>{{ $book->title }}</li>
+                        @endforeach
+                    </ul>
                 @endforeach
             </ul>
-        @endforeach
-    </ul>
+        </div>
+    </div>
 @endsection

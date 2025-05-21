@@ -2,7 +2,7 @@
 
 @section('content')
     <div class="form-container">
-        <h1>本を追加</h1>
+        <h1>Add Book</h1>
         <form action="{{ route('books.store') }}" method="POST">
             @csrf
             <div class="form-group">
@@ -17,7 +17,7 @@
                     @endforeach
                 </select>
             </div>
-            <button type="submit" class="btn">追加</button>
+            <button type="submit" class="btn">Add</button>
         </form>
     </div>
 @endsection
