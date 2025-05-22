@@ -1,36 +1,44 @@
 # Laravel Sample Project
 
 このリポジトリは、Laravelのサンプルプロジェクトです。
+詳しくは [LaravelRead.md](https://github.com/kuroneko52/Laravel-Sample/blob/feature_readMe/LaravelRead.md) を参照してください
 
-## 概要
+## Summary
 
 Laravelを使ったWebアプリケーションの基本的な構造と実装例を提供します。
 
-## 必要環境
+## License
+
+このプロジェクトは [GPL-3.0 license](https://github.com/kuroneko52/Laravel-Sample?tab=GPL-3.0-1-ov-file#readme) のもとで公開されています。
+
+## Required Environment
 
 - PHP8.3
-- Composer
+- MariaDB
 - Laravel11
-- MariaDB Server
+- Composer
 - Node.js & npm
+
+## PHP Extentions
+公式ドキュメント [Deployment](https://laravel.com/docs/11.x/deployment#server-requirements) のServer Requirementsを参照
 
 ## インストール方法
 
-1. このリポジトリをクローンします
+1. Clone this Repository
 
    ```
    git clone git@github.com:kuroneko52/Laravel-Sample.git
    cd Laravel-Sample
    ```
 
-2. パッケージをインストールします
+2. Install Package
 
    ```
    composer install
    npm install
    ```
 
-3. 環境ファイルを作成し、設定します
+3. Create and configure Environment Files
 
    ```
    cp .env.example .env
@@ -38,32 +46,24 @@ Laravelを使ったWebアプリケーションの基本的な構造と実装例�
 
    `.env` ファイルを編集し、データベースなどの情報を設定してください。
 
-4. アプリケーションキーを生成します
+4. Generate Application Key
 
    ```
    php artisan key:generate
    ```
 
-5. マイグレーションを実行します
+5. Execute migration
 
    ```
    php artisan migrate
    ```
 
-6. サーバーを起動します
+6. Start the server
 
    ```
    php artisan serve
    ```
 
-## 使い方
+## Treatment
 
-ブラウザで `http://localhost:8000` にアクセスしてください。
-
-## ライセンス
-
-このプロジェクトは GPL-3.0 license のもとで公開されています。
-
----
-
-他に追加したい情報や、特定の機能について詳しく説明したい場合は教えてください。
+ブラウザで `http://localhost:8000` and `http://127.0.0.1:8000`にアクセスしてください。
