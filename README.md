@@ -58,13 +58,21 @@ Laravelを使ったWebアプリケーションの基本的な構造と実装例�
    php artisan migrate
    ```
 
-6. Build
+6. Install Laravel UI Package
+
+   ```
+   composer require laravel/ui
+   php artisan ui vue --auth
+   npm install
+   ```
+   
+7. Build
 
    ```
    npm run dev
    ```
 
-7. Start the server
+8. Start the server
 
    ```
    php artisan serve
@@ -73,3 +81,55 @@ Laravelを使ったWebアプリケーションの基本的な構造と実装例�
 ## Treatment
 
 ブラウザで `http://localhost:8000` and `http://127.0.0.1:8000`にアクセスしてください。
+
+## Troubleshooting
+
+npm コマンドが使えなくなってこんなエラーが出たら
+
+   ```
+   $ npm run build
+
+   > build
+   > vite build
+
+   sh: 1: vite: not found
+   ```
+
+ログを見て
+
+   ```
+   $ ~/.npm/_logs/xxxxxxxx-eresolve-report.txt
+
+   # npm resolution error report
+
+   While resolving: undefined@undefined
+   Found: vite@6.3.5
+   node_modules/vite
+   dev vite@"^6.0.11" from the root project
+
+   Could not resolve dependency:
+   peer vite@"^4.0.0 || ^5.0.0" from @vitejs/plugin-vue@4.6.2
+   ```
+
+@vitejs/plugin-vueのバージョンをアップするか、こんなエラーが出てたらviteのバージョンを下げて
+
+   ```
+   Upgrade @vitejs/plugin-vue
+
+   $ npm install vite@latest @vitejs/plugin-vue@latest --save-dev
+   ```
+
+   or
+   
+   ```
+   Downgrade vite
+   
+   $ npm install vite@^5.0.0 --save-dev
+   ```
+
+   node_modules/ フォルダーと package-lock.json を削除して npm install で依存解決
+   ```
+   rm -rf node_modules package-lock.json
+
+   npm install
+   ```
