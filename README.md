@@ -58,7 +58,13 @@ Laravelを使ったWebアプリケーションの基本的な構造と実装例�
    php artisan migrate
    ```
 
-6. Start the server
+6. Build
+
+   ```
+   npm run dev
+   ```
+
+7. Start the server
 
    ```
    php artisan serve
