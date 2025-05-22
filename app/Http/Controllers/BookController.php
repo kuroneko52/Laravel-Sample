@@ -17,14 +17,14 @@ class BookController extends Controller
         return view('books.index', compact('books', 'authors'));
     }
 
-    //create
+    //show create page
     public function create()
     {
         $authors = Author::all();
         return view('books.create', compact('authors'));
     }
 
-    //store
+    //store books record
     public function store(Request $request)
     {
         $request->validate([
@@ -36,14 +36,14 @@ class BookController extends Controller
         return redirect()->route('books.index')->with('success', 'Book created successfully.');
     }
 
-    //edit
+    //show edit page
     public function edit(Book $book)
     {
         $authors = Author::all();
         return view('books.edit', compact('book', 'authors'));
     }
 
-    //update
+    //update books record
     public function update(Request $request, Book $book)
     {
         $request->validate([
@@ -55,7 +55,7 @@ class BookController extends Controller
         return redirect()->route('books.index')->with('success', 'Book updated successfully.');
     }
 
-    //delete
+    //delete books record
     public function destroy(Book $book)
     {
         $book->delete();

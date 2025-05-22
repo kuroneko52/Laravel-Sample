@@ -17,13 +17,13 @@ class AuthorController extends Controller
         return view('authors.index', compact('authors', 'books'));
     }
 
-    //create
+    //show create page
     public function create()
     {
         return view('authors.create');
     }
 
-    //store
+    //store authors record
     public function store(Request $request)
     {
         $request->validate([
@@ -34,13 +34,13 @@ class AuthorController extends Controller
         return redirect()->route('authors.index')->with('success', 'Author created successfully.');
     }
 
-    //edit
+    //show edit page
     public function edit(Author $author)
     {
         return view('authors.edit', compact('author'));
     }
 
-    //update
+    //update authors record
     public function update(Request $request, Author $author)
     {
         $request->validate([
@@ -51,7 +51,7 @@ class AuthorController extends Controller
         return redirect()->route('authors.index')->with('success', 'Author updated successfully.');
     }
 
-    //delete
+    //delete authors record
     public function destroy(Author $author)
     {
         $author->delete();
