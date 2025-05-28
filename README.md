@@ -146,7 +146,7 @@ node_modules/ フォルダーと package-lock.json を削除して npm install �
    php artisan test tests/xxxxx/ExampleTest.php
    ```
 
-or
+   or
 
    ```
    php artisan test --filter ExampleTest
