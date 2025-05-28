@@ -133,3 +133,25 @@ npm コマンドが使えなくなってこんなエラーが出たら
 
    npm install
    ```
+
+## How to Test
+
+all
+   ```
+   php artisan test
+   ```
+
+filter file
+   ```
+   php artisan test tests/xxxxx/ExampleTest.php
+   ```
+
+filter method
+   ```
+   php artisan test --filter it_your_test_method_name
+   ```
+
+filter class and method
+   ```
+   php artisan test --filter ExampleTest::it_your_test_method_name
+   ```
