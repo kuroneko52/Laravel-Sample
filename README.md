@@ -119,7 +119,7 @@ npm コマンドが使えなくなってこんなエラーが出たら
    $ npm install vite@latest @vitejs/plugin-vue@latest --save-dev
    ```
 
-   or
+or
    
    ```
    Downgrade vite
@@ -127,9 +127,37 @@ npm コマンドが使えなくなってこんなエラーが出たら
    $ npm install vite@^5.0.0 --save-dev
    ```
 
-   node_modules/ フォルダーと package-lock.json を削除して npm install で依存解決
+node_modules/ フォルダーと package-lock.json を削除して npm install で依存解決
    ```
    rm -rf node_modules package-lock.json
 
    npm install
+   ```
+
+## How to Test
+
+1. all
+   ```
+   php artisan test
+   ```
+
+2. filter file or class
+   ```
+   php artisan test tests/xxxxx/ExampleTest.php
+   ```
+
+   or
+
+   ```
+   php artisan test --filter ExampleTest
+   ```
+
+3. filter method
+   ```
+   php artisan test --filter it_your_test_method_name
+   ```
+
+4. filter class and method
+   ```
+   php artisan test --filter ExampleTest::it_your_test_method_name
    ```
