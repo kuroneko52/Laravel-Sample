@@ -3,15 +3,11 @@
 このリポジトリは、Laravelのサンプルプロジェクトです。
 詳しくは [LaravelRead.md](https://github.com/kuroneko52/Laravel-Sample/blob/feature_readMe/LaravelRead.md) を参照してください
 
-# Summary
+## Summary
 
 Laravelを使ったWebアプリケーションの基本的な構造と実装例を提供します。
 
-# License
-
-このプロジェクトは [GPL-3.0 license](https://github.com/kuroneko52/Laravel-Sample?tab=GPL-3.0-1-ov-file#readme) のもとで公開されています。
-
-# Required Environment
+## Required Environment
 
 - PHP8.3
 - MariaDB
@@ -19,10 +15,10 @@ Laravelを使ったWebアプリケーションの基本的な構造と実装例�
 - Composer
 - Node.js & npm
 
-# PHP Extentions
+## PHP Extentions
 公式ドキュメント [Deployment](https://laravel.com/docs/11.x/deployment#server-requirements) のServer Requirementsを参照
 
-# How to Install
+## How to Install
 
 1. Clone this Repository
 
@@ -78,11 +74,11 @@ Laravelを使ったWebアプリケーションの基本的な構造と実装例�
    php artisan serve
    ```
 
-# Treatment
+## Treatment
 
 ブラウザで `http://localhost:8000` and `http://127.0.0.1:8000`にアクセスしてください。
 
-# Troubleshooting
+## Troubleshooting
 
 npm コマンドが使えなくなってこんなエラーが出たら
 
@@ -134,9 +130,9 @@ node_modules/ フォルダーと package-lock.json を削除して npm install �
    npm install
    ```
 
-# How to Test
+## How to Test
 
-## Create Test Database Environment
+### Create Test Database Environment
 
 1. Create Test Database
 
@@ -148,7 +144,7 @@ node_modules/ フォルダーと package-lock.json を削除して npm install �
 
    Edit Database Settings
 
-## Test Commands
+### Test Commands
 
 1. all
    ```
@@ -175,3 +171,7 @@ node_modules/ フォルダーと package-lock.json を削除して npm install �
    ```
    php artisan test --filter ExampleTest::it_your_test_method_name
    ```
+
+## License
+
+このプロジェクトは [GPL-3.0 license](https://github.com/kuroneko52/Laravel-Sample?tab=GPL-3.0-1-ov-file#readme) のもとで公開されています。
