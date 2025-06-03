@@ -23,5 +23,5 @@ Route::post('/upload', [FileController::class, 'store']);
 Route::get('/ajax', [AjaxController::class, 'index']);
 Route::get('/ajax/data', [AjaxController::class, 'getData']);
 
-Route::resource('books', BookController::class);
-Route::resource('authors', AuthorController::class);
+Route::resource('books', BookController::class)->except(['show']);;
+Route::resource('authors', AuthorController::class)->except(['show']);;
