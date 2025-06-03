@@ -13,6 +13,7 @@ class Book extends Model
 
     public function author()
     {
+        //N:1の関係を定義
         return $this->belongsTo(Author::class);
     }
 }

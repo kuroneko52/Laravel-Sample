@@ -127,6 +127,36 @@ return [
             'path' => storage_path('logs/laravel.log'),
         ],
 
+        'debug' => [
+            'driver' => 'single',
+            'path' => env('DEBUG_LOG_PATH', storage_path('logs/debug.log')),
+            'level' => 'debug',
+        ],
+
+        'info' => [
+            'driver' => 'single',
+            'path' => env('INFO_LOG_PATH', storage_path('logs/info.log')),
+            'level' => 'info',
+        ],
+
+        'warning' => [
+            'driver' => 'single',
+            'path' => env('WARNING_LOG_PATH', storage_path('logs/warning.log')),        
+            'level' => 'warning',
+        ],
+
+        'error' => [
+            'driver' => 'single',
+            'path' => env('ERROR_LOG_PATH', storage_path('logs/error.log')),
+            'level' => 'error',
+        ],
+
+        'critical' => [
+            'driver' => 'single',
+            'path' => env('CRITICAL_LOG_PATH', storage_path('logs/critical.log')),
+            'level' => 'critical',
+        ],
+
     ],
 
 ];
