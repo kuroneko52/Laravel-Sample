@@ -47,6 +47,19 @@ class AuthorTest extends TestCase
     }
 
     #[Test]
+    public function it_can_read_a_specific_book()
+    {
+        $authors = Author::factory()->count(5)->create();
+
+        $specificAuthor = $authors->first();
+
+        $response = $this->get('/authors/' . $specificAuthor->id . '/edit');
+
+        $response->assertStatus(200);
+        $response->assertSee($specificAuthor->name);
+    }
+
+    #[Test]
     public function it_can_update_an_authors()
     {
         $author = Author::factory()->create();

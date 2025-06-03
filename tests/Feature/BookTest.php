@@ -49,6 +49,19 @@ class BookTest extends TestCase
     }
 
     #[Test]
+    public function it_can_read_a_specific_book()
+    {
+        $books = Book::factory()->count(5)->create();
+
+        $specificBook = $books->first();
+
+        $response = $this->get('/books/' . $specificBook->id . '/edit');
+
+        $response->assertStatus(200);
+        $response->assertSee($specificBook->title);
+    }
+
+    #[Test]
     public function it_can_update_a_book()
     {
         $book = Book::factory()->create();
