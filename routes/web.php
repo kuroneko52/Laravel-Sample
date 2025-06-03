@@ -5,6 +5,9 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\BookController;
 use App\Http\Controllers\AuthorController;
 
+use App\Http\Controllers\FileController;
+use App\Http\Controllers\AjaxController;
+
 Route::get('/', function () {
     #return view('welcome');
     return view('user_form');
