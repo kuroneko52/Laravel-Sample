@@ -48,7 +48,7 @@ class AuthorTest extends TestCase
     }
 
     #[Test]
-    public function it_can_read_authors_on_books_edit()
+    public function it_can_read_authors_on_book_edit()
     {
         $author = Author::factory()->create();
         $book = Book::factory()->create();
