@@ -7,10 +7,6 @@
 
 Laravelを使ったWebアプリケーションの基本的な構造と実装例を提供します。
 
-## License
-
-このプロジェクトは [GPL-3.0 license](https://github.com/kuroneko52/Laravel-Sample?tab=GPL-3.0-1-ov-file#readme) のもとで公開されています。
-
 ## Required Environment
 
 - PHP8.3
@@ -22,7 +18,7 @@ Laravelを使ったWebアプリケーションの基本的な構造と実装例�
 ## PHP Extentions
 公式ドキュメント [Deployment](https://laravel.com/docs/11.x/deployment#server-requirements) のServer Requirementsを参照
 
-## インストール方法
+## How to Install
 
 1. Clone this Repository
 
@@ -136,6 +132,20 @@ node_modules/ フォルダーと package-lock.json を削除して npm install �
 
 ## How to Test
 
+### Create Test Database Environment
+
+1. Create Test Database
+
+2. Create .env.testing
+
+   ```
+   cp .env .env.testing
+   ```
+
+   Edit Database Settings
+
+### Test Commands
+
 1. all
    ```
    php artisan test
@@ -161,3 +171,7 @@ node_modules/ フォルダーと package-lock.json を削除して npm install �
    ```
    php artisan test --filter ExampleTest::it_your_test_method_name
    ```
+
+## License
+
+このプロジェクトは [GPL-3.0 license](https://github.com/kuroneko52/Laravel-Sample?tab=GPL-3.0-1-ov-file#readme) のもとで公開されています。
