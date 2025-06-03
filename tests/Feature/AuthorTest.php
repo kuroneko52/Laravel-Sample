@@ -7,6 +7,7 @@ use Tests\TestCase;
 
 use PHPUnit\Framework\Attributes\Test;
 use App\Models\Author;
+use App\Models\Book;
 use App\Helpers\LogHelper;
 
 class AuthorTest extends TestCase
@@ -47,7 +48,19 @@ class AuthorTest extends TestCase
     }
 
     #[Test]
-    public function it_can_read_a_specific_book()
+    public function it_can_read_authors_on_books_edit()
+    {
+        $author = Author::factory()->create();
+        $book = Book::factory()->create();
+
+        $response = $this->get('/books/' . $book->id . '/edit');
+
+        $response->assertStatus(200);
+        $response->assertSee($author->name);
+    }
+
+    #[Test]
+    public function it_can_read_a_specific_author()
     {
         $authors = Author::factory()->count(5)->create();
 
