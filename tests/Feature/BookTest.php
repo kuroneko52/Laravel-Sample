@@ -27,11 +27,22 @@ class BookTest extends TestCase
     }
 
     #[Test]
-    public function it_can_read_a_book()
+    public function it_can_read_a_book_on_books()
     {   
         $book = Book::factory()->create();
 
         $response = $this->get('/books');
+
+        $response->assertStatus(200);
+        $response->assertSee($book->title);
+    }
+
+    #[Test]
+    public function it_can_read_a_book_on_authors()
+    {
+        $book = Book::factory()->create();
+
+        $response = $this->get('/authors');
 
         $response->assertStatus(200);
         $response->assertSee($book->title);

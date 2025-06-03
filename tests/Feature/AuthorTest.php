@@ -25,11 +25,22 @@ class AuthorTest extends TestCase
     }
 
     #[Test]
-    public function it_can_read_authors()
+    public function it_can_read_authors_on_authors()
     {
         $author = Author::factory()->create();
 
         $response = $this->get('/authors');
+
+        $response->assertStatus(200);
+        $response->assertSee($author->name);
+    }
+
+    #[Test]
+    public function it_can_read_authors_on_books()
+    {
+        $author = Author::factory()->create();
+
+        $response = $this->get('/books');
 
         $response->assertStatus(200);
         $response->assertSee($author->name);
