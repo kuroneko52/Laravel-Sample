@@ -33,9 +33,16 @@
                 @foreach ($authors as $author)
                     <li>{{ $author->name }}</li>
                 @endforeach
-            
             </ul>
         </div>
+
+        <div class="column">
+            <h3>
+            <a href="{{ route('language.switch', ['locale' => 'ja']) }}">日本語</a>
+            <a href="{{ route('language.switch', ['locale' => 'en']) }}">English</a>
+            </h3>
+        </div>
+
     </div>
 @endsection
 
