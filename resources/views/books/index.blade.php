@@ -4,6 +4,7 @@
     <div class="container">
         <div class="column">
             <h1>Books List</h1>
+            <h1>{{__('bookslist')}}</h1>
             <a href="{{ route('books.create') }}">本を追加</a>
             <div class="button-container-delete">
                 <ul>

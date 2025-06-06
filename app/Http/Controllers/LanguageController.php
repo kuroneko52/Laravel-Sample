@@ -7,11 +7,12 @@ use Illuminate\Http\Request;
 
 class LanguageController extends Controller
 {
-    public function switchLanguage($lang)
+    public function switchLanguage($locale)
     {
-        App::setLocale($lang);
+        App::setLocale($locale);
+        $locale = App::currentLocale();
 
-        session(['applocale' => $lang]);
+        session(['applocale' => $locale]);
 
         return redirect()->back();
     }
