@@ -17,11 +17,13 @@ class AuthorTest extends TestCase
     #[Test]
     public function it_can_create_an_author()
     {
-        $authorData = Author::factory()->create()->make()->toArray();
-
+        $authorData = Author::factory()->create()->toArray();
         $response = $this->post('/authors', $authorData);
 
         $response->assertStatus(302);
+        $response->assertRedirect('/authors');
+
+
         $this->assertDatabaseHas('authors', $authorData);
     }
 
@@ -84,6 +86,8 @@ class AuthorTest extends TestCase
         $response = $this->put("/authors/{$author->id}", $updatedData);
 
         $response->assertStatus(302);
+        $response->assertRedirect('/authors');
+
         $this->assertDatabaseHas('authors', $updatedData);
     }
 
@@ -95,6 +99,8 @@ class AuthorTest extends TestCase
         $response = $this->delete("/authors/{$author->id}");
 
         $response->assertStatus(302);
+        $response->assertRedirect('/authors');
+
         $this->assertDatabaseMissing('authors', [
             'id' => $author->id,
         ]);
