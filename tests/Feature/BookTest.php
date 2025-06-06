@@ -19,10 +19,12 @@ class BookTest extends TestCase
     {
         $author = Author::factory()->create();
         $bookData = Book::factory()->make(['author_id' => $author->id])->toArray();
-    
+
         $response = $this->post('/books', $bookData);
     
         $response->assertStatus(302);
+        $response->assertRedirect('/books');
+
         $this->assertDatabaseHas('books', $bookData);
     }
 
@@ -74,6 +76,7 @@ class BookTest extends TestCase
         $response = $this->put("/books/{$book->id}", $updatedData);
 
         $response->assertStatus(302);
+        $response->assertRedirect('/books');
         $this->assertDatabaseHas('books', $updatedData);
     }
 
@@ -85,6 +88,8 @@ class BookTest extends TestCase
         $response = $this->delete("/books/{$book->id}");
 
         $response->assertStatus(302);
+        $response->assertRedirect('/books');
+
         $this->assertDatabaseMissing('books', [
             'id' => $book->id,
         ]);
