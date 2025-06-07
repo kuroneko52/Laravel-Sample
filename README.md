@@ -132,17 +132,22 @@ node_modules/ フォルダーと package-lock.json を削除して npm install �
 
 ## How to Test
 
-### Create Test Database Environment
+### Create Test Environment
 
 1. Create Test Database
 
-2. Create .env.testing
+2. Create Test APP_KEY
+   ```
+   php artisan key:generate --show
+   ```
+
+3. Create .env.testing
 
    ```
    cp .env .env.testing
    ```
 
-   Edit Database Settings
+   Edit Database Settings and APP_KEY
 
 ### Test Commands
 
