@@ -35,25 +35,25 @@ Route::resource('authors', AuthorController::class)->except(['show']);
 
 Route::get('language/{locale}', [LanguageController::class, 'switchLanguage'])->name('language.switch');
 
-Route::get('/books/{locale}', function (string $locale) {
-    if (! in_array($locale, ['en', 'es', 'fr'])) {
-        abort(400);
-    }
+#Route::get('/books/{locale}', function (string $locale) {
+#    if (! in_array($locale, ['en', 'es', 'fr','ja'])) {
+#        abort(400);
+#    }
+#
+#    App::setLocale($locale);
+#
+#    // ...
+#});
 
-    App::setLocale($locale);
 
-    // ...
-});
-
-
-Route::get('/author/{locale}', function (string $locale) {
-    if (! in_array($locale, ['en', 'es', 'fr'])) {
-        abort(400);
-    }
-
-    App::setLocale($locale);
-
-    // ...
-});
+#Route::get('/author/{locale}', function (string $locale) {
+#    if (! in_array($locale, ['en', 'es', 'fr','ja'])) {
+#        abort(400);
+#    }
+#
+#    App::setLocale($locale);
+#
+#    // ...
+#});
 
 
