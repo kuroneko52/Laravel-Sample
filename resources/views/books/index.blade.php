@@ -4,6 +4,7 @@
     <div class="container">
         <div class="column">
             <h1>Books List</h1>
+            <h1>{{__('ui.bookslist')}}</h1>
             <a href="{{ route('books.create') }}">本を追加</a>
             <div class="button-container-delete">
                 <ul>
@@ -33,9 +34,16 @@
                 @foreach ($authors as $author)
                     <li>{{ $author->name }}</li>
                 @endforeach
-            
             </ul>
         </div>
+
+        <div class="column">
+            <h3>
+            <a href="{{ route('language.switch', ['locale' => 'ja']) }}">日本語</a>
+            <a href="{{ route('language.switch', ['locale' => 'en']) }}">English</a>
+            </h3>
+        </div>
+
     </div>
 @endsection
 
