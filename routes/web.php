@@ -35,7 +35,7 @@ Route::post('/user', [UserController::class, 'store'])->name('user.store');
 #Route::resource('books', BookController::class)->except(['show']);
 #Route::resource('authors', AuthorController::class)->except(['show']);
 
-Route::middleware([LanguageMiddleware::class])->group(function () {
+Route::middleware(['switchLanguage'])->group(function () {
     Route::resource('books', BookController::class)->except(['show']);
     Route::resource('authors', AuthorController::class)->except(['show']);
 });
