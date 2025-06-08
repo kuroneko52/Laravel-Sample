@@ -6,9 +6,9 @@ use Closure;
 use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Illuminate\Support\Facades\App;
-use App\Helpers\LogHelper;
+use Illuminate\Support\Facades\Session;
 
-class SetLocale
+class LanguageMiddleware
 {
     /**
      * Handle an incoming request.

@@ -13,6 +13,8 @@ class LanguageController extends Controller
         App::setLocale($locale);
         session(['applocale' => $locale]);
 
+        LogHelper::debug('debug_log: ' . $locale);
+
         return redirect()->back();
     }
 }
