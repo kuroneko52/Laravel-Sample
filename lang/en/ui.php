@@ -16,8 +16,4 @@ return [
     'update' => 'Update',
     'backtobookslist' => 'Back to Books List',
     'backtoauthorslist' => 'Back to Authors List',
-    '' => '',
-    '' => '',
-    '' => '',
-    '' => '',
 ];

@@ -16,8 +16,4 @@ return [
     'update' => '更新',
     'backtobookslist' => '本一覧へ戻る',
     'backtoauthorslist' => '作者一覧へ戻る',
-    '' => '',
-    '' => '',
-    '' => '',
-    '' => '',
 ];
