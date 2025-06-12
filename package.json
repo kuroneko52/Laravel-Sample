@@ -19,7 +19,7 @@
         "vite": "^6.3.5",
         "vue": "^3.2.37"
     },
-  "optionalDependencies": {
-    "@rollup/rollup-linux-x64-gnu": "4.9.1"
-  }
+    "optionalDependencies": {
+        "@rollup/rollup-linux-x64-gnu": "4.9.1"
+    }
 }
