@@ -8,6 +8,7 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\BookController;
 use App\Http\Controllers\AuthorController;
 use App\Http\Controllers\LanguageController;
+use App\Http\Controllers\WebController;
 
 use App\Http\Controllers\FileController;
 use App\Http\Controllers\AjaxController;
@@ -16,8 +17,21 @@ use App\Http\Middleware\LanguageMiddleware;
 
 Route::get('/', function () {
     #return view('welcome');
-    return view('user_form');
+    #    return view('user_form');
+    return view('index');
 });
+
+Route::get('/', [WebController::class, 'index']);
+
+Route::group(['prefix' => '{locale}', 'where' => ['locale' => '[a-z]{2}'], 'middleware' => ['Locale']], function () {
+    Route::get('/', [WebController::class, 'index'])->name('web.index');
+    Route::post('/set-language', [WebController::class, 'setLanguage'])->name('web.change-language');
+});
+
+#Route::middleware(['Locale'])->group(['prefix' => '{locale}', 'where' => ['locale' => '[a-z]{2}']], function () {
+#    Route::get('/', [WebController::class, 'index'])->name('web.index');
+#    Route::post('/set-language', [WebController::class, 'setLanguage'])->name('web.change-language');
+#});
 
 Auth::routes();
 
@@ -41,6 +55,8 @@ Route::middleware(['Language'])->group(function () {
 });
 
 Route::get('language/{locale}', [LanguageController::class, 'switchLanguage'])->name('language.switch');
+
+#Route::get('/{locale}/set-language', [WebController::class, 'setLanguage']);
 
 #Route::get('/books/{locale}', function (string $locale) {
 #    if (! in_array($locale, ['en', 'es', 'fr','ja'])) {
